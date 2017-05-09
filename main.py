@@ -2,7 +2,7 @@
 """
 Created on Sat May  6 10:09:25 2017
 
-@author: bowns
+@author: Bo-Wun S
 """
 
 import numpy as np
