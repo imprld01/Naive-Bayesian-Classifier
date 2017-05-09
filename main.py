@@ -36,11 +36,13 @@ for k, (train_index, test_index) in enumerate(skfold.split(data, target)):
     print(test_class)
     print(test_predict)
     
+    # estimate accuracy by ourself for each fold
     result[test_index] = test_predict
     score = (test_predict==test_class).sum()/test_index.size
     
     print("Accuracy:", score)
     print()
 
+# estimate accuracy by function call
 gnb_scores = cross_val_score(gnb, data, target, scoring='accuracy', cv=skfold)
 print(gnb_scores)
