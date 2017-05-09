@@ -14,8 +14,8 @@ from sklearn.model_selection import cross_val_score
 gnb = GaussianNB()
 bcd = datasets.load_breast_cancer()
 
-data = bcd.data
-target = bcd.target
+data = bcd.data # samples from original dataset
+target = bcd.target # labels corresponding to each sample
 
 result = np.zeros(target.shape, target.dtype)
 skfold = StratifiedKFold(n_splits=10, shuffle=True, random_state=5)
@@ -24,10 +24,13 @@ for k, (train_index, test_index) in enumerate(skfold.split(data, target)):
     print("Fold:", k+1)
     print("Train Index:", train_index)
     print("Test Index:", test_index)
+    # preparing training dataset and testing dataset
     train_data, test_data = data[train_index], data[test_index]
     train_class, test_class = target[train_index], target[test_index]
     
+    # training classifier by training dataset
     gnb.fit(train_data, train_class)
+    # using classifier to predict input data
     train_predict = gnb.predict(train_data)
     test_predict = gnb.predict(test_data)
     
