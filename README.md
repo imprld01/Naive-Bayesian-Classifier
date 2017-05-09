@@ -1,7 +1,8 @@
-# Naive-Bayesian-Classifier
+﻿# Naive-Bayesian-Classifier
 
 A program to construct a naïve bayesian classifier on the breast cancer wisconsin dataset.  
-The dataset can be found in sklearn.datasets package(sklearn.datasets.load_breast_cancer).  
+The dataset can be found in sklearn.datasets package(sklearn.datasets.load_breast_cancer),  
+or you can find it on [here](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)).
 This program use the stratified 10-fold cross-validation (outer cross-validation) for  
 estimating the accuracy of the classifier.
 
